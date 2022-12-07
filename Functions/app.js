@@ -3,6 +3,152 @@
 
 
 
+
+
+// const movies = [
+//     {
+//         title: 'Amadeus',
+//         score: 99,
+//         year: 1984
+//     },
+//     {
+//         title: 'Sharknado',
+//         score: 35,
+//         year: 2013
+//     },
+//     {
+//         title: '13 Going On 30',
+//         score: 70,
+//         year: 2004
+//     },
+//     {
+//         title: 'Stand By Me',
+//         score: 85,
+//         year: 1986
+//     },
+//     {
+//         title: 'Waterworld',
+//         score: 62,
+//         year: 1995
+//     },
+//     {
+//         title: 'Jingle All The Way',
+//         score: 71,
+//         year: 1996
+//     },
+//     {
+//         title: 'Parasite',
+//         score: 95,
+//         year: 2019
+//     },
+//     {
+//         title: 'Notting Hill',
+//         score: 77,
+//         year: 1999
+//     },
+//     {
+//         title: 'Parasite',
+//         score: 95,
+//         year: 2019
+//     },
+// ]
+
+// movies.filter(({ score }) => score >= 90)
+// const filtered = movies.map(({ title, score, year }) => {
+//     return `${title} (${year}) is rated ${score}`
+// })
+
+
+
+// const user = {
+//     email: 'blueman@gmail.com',
+//     password: 'tobias123!',
+//     username: 'tfunke',
+//     firstName: 'Lucas',
+//     lastName: 'Mesd',
+//     born: 1930,
+//     died: 1972,
+//     bio: 'Lucas Mesd was an American politician',
+//     city: 'San Francisco'
+// }
+
+// function fullName({ firstName, lastName = 'N/A' }) {
+//     return `${firstName} ${lastName}`
+// }
+
+
+// //DESTRUCTURING!!!
+// const user = {
+//     email: 'blueman@gmail.com',
+//     password: 'tobias123!',
+//     username: 'tfunke',
+//     firstName: 'Lucas',
+//     lastName: 'Mesd',
+//     born: 1930,
+//     died: 1972,
+//     bio: 'Lucas Mesd was an American politician',
+//     city: 'San Francisco'
+// }
+
+// const { email, password, username, firstName, lastName } = user;
+// //ASSIGN DIFFERENT NAME!!!
+// const { born: birthYear } = user;
+// const user2 = {
+//     email: 'blueman222@gmail.com',
+//     username: 'sda',
+//     firstName: 'Lucdadss',
+//     lastName: 'Meaasassd',
+//     born: 1930,
+//     city: 'San Francisco'
+// }
+
+// const { city, state = 'CA', died = 'N/A' } = user2;
+
+
+
+
+//REST!!!
+// function sum() {
+//     return arguments.length;
+// }
+
+// function sum(...nums) {
+//     return nums.reduce((total, el) => total + el);
+// }
+
+// function raceResults(gold, silver, ...everyoneElse) {
+//     console.log(`GOLD MEDAL GOES TO: ${gold}`)
+//     console.log(`SILVER MEDAL GOES TO: ${silver}`)
+//     console.log(`THANK YOU TO EVERYONE ELSE: ${everyoneElse}`)
+// }
+
+
+// const feline = {
+//     legs: 4,
+//     family: 'Felidae'
+// };
+// const canine = {
+//     isFurry: true,
+//     family: 'Caninae'
+// }
+
+// const catDog = { ...feline, ...canine };
+
+// const dataFromForm = {
+//     email: 'blueman@gmail.com',
+//     password: 'tobias123!',
+//     username: 'tfunke'
+// }
+// const newUser = { ...dataFromForm, id: 2345, isAdmin: false };
+
+
+// //SPREAD!!!
+// const cats = ['Blue', 'Scout', 'Rocket'];
+// const dogs = ['Rusty', 'Robben', 'Wyatt'];
+// const allPets = [...cats, ...dogs];
+
+
+
 // function greet(person, msg = 'Hey there!') {
 //     console.log(`${msg} ${person}`)
 // }
