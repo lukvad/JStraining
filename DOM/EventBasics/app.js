@@ -5,17 +5,22 @@ const randomColor = () => {
     return `rgb(${r}, ${g}, ${b})`
 }
 
-const buttons = document.querySelector('button')
+const buttons = document.querySelectorAll('button')
 
 for (let button of buttons) {
-    button.addEventListener('click', () => {
-        button.style.backgroundColor = randomColor();
-    })
+    button.addEventListener('click', colorize)
 }
 
+const h1s = document.querySelectorAll('h1')
 
+for (let h1 of h1s) {
+    h1.addEventListener('click', colorize)
+}
 
-
+function colorize() {
+    this.style.backgroundColor = randomColor()
+    this.style.color = randomColor()
+}
 // const h1 = document.querySelector('h1')
 // button.addEventListener('click', () => {
 //     const newColor = randomColor()
