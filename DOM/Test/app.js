@@ -1,7 +1,6 @@
-const cont = document.querySelector('#container')
+const h1 = document.querySelector('h1')
+const input = document.querySelector('input')
 
-for (let i = 1; i <= 100; i++) {
-    const button = document.createElement('button')
-    button.textContent = 'Hey!'
-    cont.appendChild(button)
-}
+input.addEventListener('input', function (e) {
+    h1.innerText = `Welcome, ${input.value}`
+})
