@@ -22,30 +22,65 @@ const fakeRequestPromise = (url) => {
         }, delay)
     })
 }
-
-
-
-fakeRequestCallback('books.com/page1', function (response) {
-    console.log('It worked!')
-    console.log(response)
-    fakeRequestCallback('books.com/page2', function (response) {
-        console.log('It worked again!')
-        console.log(response)
-        fakeRequestCallback('books.com/page3', function (response) {
-            console.log('It worked again and again!')
-            console.log(response)
-        }, function (err) {
-            console.log('error 3rd')
-            console.log(err)
-        })
-    }, function (err) {
-        console.log('error 2nd')
-        console.log(err)
+fakeRequestPromise('yelp.com/api/coffe/page1')
+    .then((data) => {
+        console.log('It worked (Page 1)')
+        console.log(data)
+        return fakeRequestPromise('yelp.com/api/coffe/page2')
     })
-}, function (err) {
-    console.log('error ')
-    console.log(err)
-})
+    .then((data) => {
+        console.log('It worked (page 2)')
+        console.log(data)
+        return fakeRequestPromise('yelp.com/api/coffe/page3')
+    }).then((data) => {
+        console.log(data)
+        console.log('It worked (page 3)')
+    }).catch((err) => {
+        console.log(err)
+        console.log('Oh no, a request failed')
+    })
+
+    // .then(() => {
+    //     console.log("Promise resolved")
+    //     console.log("It worked (page 1)")
+    //     fakeRequestPromise('yelp.com/api/coffee/page2')
+    //         .then(() => {
+    //             console.log("Promise resolved")
+    //             console.log("It worked (page 2)")
+    //         }).catch(() => {
+    //             console.log("Promise rejected")
+    //             console.log("Oh no error (page 2)")
+    //         })
+    // }).catch(() => {
+    //     console.log("Promise rejected")
+    //     console.log("Oh no error (page 1)")
+    // })
+
+
+
+
+
+// fakeRequestCallback('books.com/page1', function (response) {
+//     console.log('It worked!')
+//     console.log(response)
+//     fakeRequestCallback('books.com/page2', function (response) {
+//         console.log('It worked again!')
+//         console.log(response)
+//         fakeRequestCallback('books.com/page3', function (response) {
+//             console.log('It worked again and again!')
+//             console.log(response)
+//         }, function (err) {
+//             console.log('error 3rd')
+//             console.log(err)
+//         })
+//     }, function (err) {
+//         console.log('error 2nd')
+//         console.log(err)
+//     })
+// }, function (err) {
+//     console.log('error ')
+//     console.log(err)
+// })
 
 // fakeRequestCallback('books.com/page1',
 //     function (response) {
