@@ -1,7 +1,8 @@
 //THIS IS A STRING OF JSON (NOT AN OBJECT)
-const data = `{"ticker":{"base":"BTC","target":"USD","price":"11288.49813464","volume":"91769.69699773","change":"-46.29462447"},"timestamp":1596510482,"success":true,"error":""}`
+const data = `{"ticker":{"base":"ETH","target":"USD","price":"1212.02552149","volume":"184358.68068778","change":"0.01871106"},"timestamp":1671654784,"success":true,"error":""}`
 
 // THIS IS A JS OBJECT
 const parsedData = JSON.parse(data);
+JSON.stringify(data)
 
 
