@@ -1,14 +1,36 @@
-
-
-const getStarWarsPerson = async (id) => {
+const jokes = document.querySelector('#jokes')
+const btn = document.querySelector('button')
+const addDadJoke = async () => {
+  const joke = await getDadJoke()
+  const newLi = document.createElement('LI')
+  newLi.innerText = joke
+  jokes.append(newLi)
+}
+const getDadJoke = async () => {
   try {
-    const res = await axios.get(`https://swapi.dev/api/people/${id}/`)
-    console.log(res.data.name, res.data.height);
+    const config = { headers: { Accept: 'application/json' } }
+    const res = await axios.get('https://icanhazdadjoke.com', config)
+    return res.data.joke
   } catch (e) {
-    console.log(e);
+    return 'Sorry no jokes atm'
   }
 }
-getStarWarsPerson(5)
+
+btn.addEventListener('click', addDadJoke)
+
+
+// const getStarWarsPerson = async (id) => {
+//   try {
+//     const res = await axios.get(`https://swapi.dev/api/people/${id}/`)
+//     console.log(res.data.name, res.data.height);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
+// getStarWarsPerson(5)
+// getStarWarsPerson(10)
+
+
 // // axios
 // //   .get("https://swapi.dev/api/people/1/")
 // //   .then((res) => {
