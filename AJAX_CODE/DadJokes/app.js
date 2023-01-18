@@ -3,6 +3,7 @@ const button = document.querySelector("button");
 
 const addNewJoke = async () => {
   const jokeText = await getDadJoke();
+  console.log(jokeText)
   const newLI = document.createElement("LI");
   newLI.append(jokeText);
   jokes.append(newLI);
