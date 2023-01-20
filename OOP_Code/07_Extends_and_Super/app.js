@@ -1,30 +1,25 @@
 class Pet {
 	constructor(name, age) {
-		console.log('IN PET CONSTRUCTOR!');
-		this.name = name;
-		this.age = age;
+		this.name = name
+		this.age = age
 	}
 	eat() {
-		return `${this.name} is eating!`;
+		return `${this.name} is eating!`
 	}
 }
 
 class Cat extends Pet {
-	constructor(name, age, livesLeft = 9) {
-		console.log('IN CAT CONSTRUCTOR!');
-		super(name, age);
-		this.livesLeft = livesLeft;
+	constructor(name, age, lifesLeft = 9) {
+		super(name, age)
+		this.lifesLeft = lifesLeft
 	}
 	meow() {
-		return 'MEOWWWW!!';
+		return 'MEOW!'
 	}
 }
 
 class Dog extends Pet {
 	bark() {
-		return 'WOOOF!!';
-	}
-	eat() {
-		return `${this.name} scarfs his food!`;
+		return 'WOOFF!'
 	}
 }
